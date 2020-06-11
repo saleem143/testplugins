@@ -1,0 +1,53 @@
+<div class="col-4">
+  <div class="card p-0">
+    <div class="card-header text-center">
+      <img src="{{card.app_logo_url}}" width="30px" height="30px" />
+      <span>{{card.app_name}}</span>
+    </div>
+    <div class="card-body pb-1 elipses">
+      <form
+        action=""
+        id="{{card.app_id}}_form"
+        class="p-3"
+        style="height: 100%;"
+      >
+        <% _.forEach(data, function(item) { %>
+        <div class="form-group">
+          <label for="exampleInputEmail1">{{item.label}}</label>
+          <input
+            type="{{item.type}}"
+            class="form-control mb-2"
+            id="input_123"
+            name="{{item.name}}"
+            aria-describedby="emailHelp"
+            placeholder="{{item.type}}"
+            required="{{item.required}}"
+            value="{{item.value}}"
+          />
+          <small
+            id="{{item.name}}_error"
+            class="form-text text-danger"
+            style="display: none;"
+            >This feild is required</small
+          >
+        </div>
+        <% }); %>
+      </form>
+    </div>
+    <div class="p-2 text-center">
+      <button
+        class="btn btn-outline-primary"
+        type="button"
+        onclick="window._Plugins.widget.formSubmit('{{type}}')"
+      >
+        {{type}}
+      </button>
+      <button
+        class="btn btn-outline-danger"
+        onclick="window._Plugins.widget.formCancel()"
+      >
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>

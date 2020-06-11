@@ -1,0 +1,43 @@
+<div id="{{category}}_tabpane" class="p-2 tab-pane">
+  <div class="row p-0 pt-3" id="{{category}}_home">
+    <% _.forEach(data, function(item) { %>
+    <div class="col-3">
+      <div class="card p-0">
+        <div class="card-header text-center">
+          <img src="{{item.app_logo_url}}" width="30px" height="30px" />
+          <span>{{item.app_name}}</span>
+        </div>
+        <div class="card-body pb-1 elipses">
+          {{item.description}}
+        </div>
+        <div class="p-2 text-center">
+          <% if(item.status == 'Manage') { %> <% if(item.auth_type == 'Basic') {
+          %>
+          <button
+            class="btn btn-sm btn-outline-primary"
+            onclick="window._Plugins.formEdit(`{{item.app_id}}`)"
+          >
+            Settings
+          </button>
+          <% } %>
+          <button
+            class="btn btn-sm btn-outline-danger"
+            onclick="window._Plugins.deletePlugin(`{{item.app_id}}`)"
+          >
+            Delete
+          </button>
+          <% } else {%>
+          <button
+            class="btn btn-sm btn-outline-primary"
+            onclick="window._Plugins.isPluginConfigured(`{{item.app_id}}`)"
+          >
+            Add
+          </button>
+          <% } %>
+        </div>
+      </div>
+    </div>
+    <% }); %>
+  </div>
+  <div id="{{category}}_form" class="row p-0"></div>
+</div>

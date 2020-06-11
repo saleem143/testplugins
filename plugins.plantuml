@@ -1,0 +1,38 @@
+@startuml plugins
+class Plugins {
++userId: Number
++widgetCardDetails: Object
++widgetData: Object
++installedPlugins:Array
++configurePlugins: Array
++serverUrl:String
++userKey:String
++userJSON:Object
+-init()
+-identifyUser()
+-setUserJSON()
+-downloadPlugins()
+-filterPlugins()
+-isPluginConfigured()
+-addPlugin()
+-initPlugin()
+-getPluginCardDetails()
+-filterPluginCardDetails()
+-restFailure()
+}
+
+class Widgets {
+-renderHtml()
+-showInstalledPlugins()
+-showMarketplacePlugins()
+-pluginAuthorization()
+-showModal()
+-closeModal()
+-showPluginCards()
+-showPluginCardDetails()
+}
+
+Plugins <-down-> Node.500appsweb
+Plugins <-down-> Widgets
+Node.500appsweb -> Widgets
+@enduml

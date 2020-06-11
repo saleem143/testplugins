@@ -1,0 +1,35 @@
+{
+  "name": "plugins",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "npx webpack --config plugin.webpack.config.js",
+    "serve": "nodemon server.js",
+    "dev": "webpack-dev-server --inline"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/500apps2/pluginsly.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/500apps2/plugins/issues"
+  },
+  "homepage": "https://github.com/500apps2/pluginsly#readme",
+  "devDependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^1.19.4",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "@500apps/500apps-web": "file:../500apps-web-master",
+    "handlebars": "^4.5.3",
+    "lodash": "^4.17.15",
+    "html-loader": "^1.1.0"
+  }
+}
